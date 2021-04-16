@@ -19,6 +19,7 @@ jobs:
         shell: bash
         run: |
           echo "##[set-output name=branch;]$(echo release-drafter-${GITHUB_REF#refs/heads/}.yml)"         
+          echo ${{ steps.extract_branch.outputs.branch }}
         id: extract_branch
        
       - name: Print Release Drafter Config File Name 
